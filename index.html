@@ -1,1 +1,354 @@
-bonjour
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M A Q T O P - Societé de Réalisation des Maquettes 3D Architecturales au Maroc</title>
+  <meta name="description" content="Maqtop, spécialiste de la fabrication et réalisation des Maquettes 3D architecturales et industrielles au Maroc. Découvrez notre expertise en réalisation des Maquettes 3D architecturales au Maroc.">
+ <!-- Lien vers le fichier CSS -->
+   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body {
+        margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f8;
+    color: #333;
+    justify-content: center;
+     align-items: center; /* Centrer verticalement */
+    min-height: 100vh; /* Assurer la hauteur complète de l'écran */
+    text-align: center; /* Centrer le texte à l'intérieur */
+    line-height: 150%; }
+    /* En-tête */
+    header { display: flex; align-items: center; justify-content: center; height:80px; background: #1e3a8a; color: #fff; 
+    font-size: 1.3rem; font-weight: bold; font-family: 'Arial', sans-serif; /* Police moderne et lisible */}
+    /* Image de fond avec texte superposé */
+    .hero { position: relative; height: 300px; background-image: url('img/ariere.jpg'); background-size: cover; background-position: center; color: white; display: flex; align-items: center; justify-content: center; }
+    .hero-text { background: rgba(0, 0, 0, 0.1); padding: 20px; max-width: 100%; text-align: center; }
+    /* Carrousel - image par image */
+    .carousel-container { position: relative; overflow: hidden; width: 100%; height: 40vh; margin-top: 0.1cm; margin-bottom: 0.1cm}
+    .carousel { display: flex; transition: transform 0.5s ease; width: 100%; }
+    .carousel img { width: 8cm; height: 8cm; object-fit: cover; object-position: center; margin: 0.1cm; }
+/* Carte et texte à côté */
+.map-container {
+    width: 100%;
+    height: auto; /* Laisse le contenu ajuster la hauteur */
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Permet d'ajuster les éléments sur plusieurs lignes */
+    gap: 20px;
+}
+
+.map-container iframe {
+    width: 100%; /* Adapte la largeur à l'écran */
+    height: 40vh; /* Hauteur relative à la taille de l'écran */
+    border: none;
+    overflow: hidden;
+    margin: 0;
+}
+
+.map-info {
+    flex: 1 1 300px; /* Minimum 300px, ajuste selon l'espace */
+    padding: 1rem; /* Unité relative */
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    color: #333;
+    font-size: 1rem;
+}
+    
+       /* Carte et texte à côté */
+    .map-container { width: 100%; height: 5cm; margin-top: 20px; display: flex; justify-content: space-between; }
+    .map-container iframe { width: 100%; height: 100%; border: none; overflow: hidden; margin: 0; }
+
+    .map-info { width: 28%; padding: 1cm; background-color: #ffffff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px; color: #333; font-size: 1rem; }
+
+    /* Galerie et zoom d'images */
+    .gallery-container { margin: 40px 0; }
+    .gallery { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .gallery img { width: 10cm; height: 8cm; border-radius: 8px; cursor: pointer; transition: transform 0.3s; }
+    .gallery img.zoomed { transform: scale(1.5); z-index: 100; }
+    .zoomed-image { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 90%; max-height: 90%; z-index: 1000; background-color: rgba(0, 0, 0, 0.8); display: none; }
+    .zoomed-image img { width: 10cm; height: auto; border-radius: 20px; }
+    .zoomed-image:target { display: block; }
+
+    /* Pied de page */
+    footer { background-color: #1e3a8a; color: #fff; padding: 20px; text-align: center; }
+
+    /* Styles pour chaque catégorie avec couleur et marges */
+    .category { margin: 0.5cm 0; padding: 1cm; border-radius: 10px; }
+    .category h2 { margin-bottom: 10px; font-size: 1.8rem; color: #004d40; }
+    .category p { font-size: 1.1rem; color: #00796b; }
+
+    /* Catégorie 1 (exemple avec couleur différente) */
+    .category-1 { background-color: #e0f7fa; color: #00796b; }
+    .category-2 { background-color: #fce4ec; color: #c2185b; }
+    .category-3 { background-color: #fff3e0; color: #ff6f00; }
+    
+
+     </style>
+</head>
+<body>
+  <!-- En-tête -->
+  <header>MAQTOP - Societé de Réalisation des Maquettes 3D Architecturales au Maroc</header>
+  
+  <!-- Image de fond avec texte superposé -->
+  <div class="hero">
+    <div class="hero-text">
+      <h2>Réalisation des Maquettes 3D  d'Architecture</h2>
+      <p>RÉALISEZ VOS PROJETS EN TOUTE CONFIANCE - Maquettes 3D  d'Architecture - TRAVAUX DE QUALITÉ - CONSEIL & DEVIS GRATUITS</p>
+    </div>
+  </div>
+  
+   <!-- Boutons flottants -->
+  <a href="https://wa.me/0663876644" target="_blank" class="whatsapp-button">WhatsApp</a>
+
+
+  <!-- Carrousel -->
+  <div class="carousel-container">
+    <div class="carousel">
+      <img src="img/maquette1.jpg" alt="Maquette Architecturale" onclick="zoomImage(this)">
+      <img src="img/maquette2.jpg" alt="Maquette Architecturale" onclick="zoomImage(this)">
+      <img src="img/maquette3.jpg" alt="Maquette Architecturale" onclick="zoomImage(this)">
+      <img src="img/industrielle1.jpg" alt="Maquette Industrielle" onclick="zoomImage(this)">
+      <img src="img/industrielle2.jpg" alt="Maquette Industrielle" onclick="zoomImage(this)">
+      <img src="img/industrielle3.jpg" alt="Maquette Industrielle" onclick="zoomImage(this)">
+      <img src="img/3d1.jpg" alt="Maquette 3D Intérieure" onclick="zoomImage(this)">
+      <img src="img/3d2.jpg" alt="Maquette 3D Intérieure" onclick="zoomImage(this)">
+      <img src="img/3d3.jpg" alt="Maquette 3D Intérieure" onclick="zoomImage(this)">
+      <img src="img/10.jpg" alt="Image 10">
+      <img src="img/11.jpg" alt="Image 11">
+      <img src="img/12.jpg" alt="Image 12">
+      <img src="img/13.jpg" alt="Image 13">
+      <img src="img/14.jpg" alt="Image 14">
+      <img src="img/10.jpg" alt="Image 15">
+      <img src="img/11.jpg" alt="Image 16">
+      <img src="img/12.jpg" alt="Image 17">
+      <img src="img/13.jpg" alt="Image 18">
+      <img src="img/14.jpg" alt="Image 19">
+      <img src="img/10.jpg" alt="Image 20">
+      <img src="img/11.jpg" alt="Image 21">
+      <img src="img/12.jpg" alt="Image 22">
+      <img src="img/13.jpg" alt="Image 23">
+      <img src="img/14.jpg" alt="Image 24">
+    </div>
+  </div>
+
+  <!-- Catégories de Maquettes 3D -->
+  <div class="category category-1">
+    <h2>Maquettes 3D Architecturales</h2>
+    <p>Les Maquettes 3D architecturales au Maroc sont conçues avec une précision exceptionnelle pour répondre à vos besoins spécifiques en termes de conception et de détails. Chaque projet est unique et fait l'objet d'une attention particulière.</p>
+    <div class="gallery">
+      <img src="img/maquette1.jpg" alt="Maquette Architecturale" onclick="zoomImage(this)">
+      <img src="img/maquette2.jpg" alt="Maquette Architecturale" onclick="zoomImage(this)">
+      <img src="img/maquette3.jpg" alt="Maquette Architecturale" onclick="zoomImage(this)">
+      <img src="img/maquette1.jpg" alt="Maquette Architecturale" onclick="zoomImage(this)">
+      <img src="img/maquette2.jpg" alt="Maquette Architecturale" onclick="zoomImage(this)">
+      <img src="img/maquette3.jpg" alt="Maquette Architecturale" onclick="zoomImage(this)">
+    </div>
+  </div>
+
+  <div class="category category-2">
+    <h2>Maquettes 3D Industrielles</h2>
+    <p>Nos Maquettes 3D industrielles sont idéales pour visualiser les infrastructures et processus complexes, permettant de rendre les projets industriels plus accessibles et compréhensibles.</p>
+    <div class="gallery">
+      <img src="img/industrielle1.jpg" alt="Maquette Industrielle" onclick="zoomImage(this)">
+      <img src="img/industrielle2.jpg" alt="Maquette Industrielle" onclick="zoomImage(this)">
+      <img src="img/industrielle3.jpg" alt="Maquette Industrielle" onclick="zoomImage(this)">
+      
+      <img src="img/industrielle1.jpg" alt="Maquette Industrielle" onclick="zoomImage(this)">
+      <img src="img/industrielle2.jpg" alt="Maquette Industrielle" onclick="zoomImage(this)">
+      <img src="img/industrielle3.jpg" alt="Maquette Industrielle" onclick="zoomImage(this)">
+    </div>
+  </div>
+
+  <div class="category category-3">
+    <h2>Maquettes 3D 3D Intérieures</h2>
+    <p>Les Maquettes 3D 3D intérieures sont la solution parfaite pour les designers d'intérieur et les architectes, offrant une vue réaliste de l'espace avant toute construction ou rénovation.</p>
+    <div class="gallery">
+      <img src="img/3d1.jpg" alt="Maquette 3D Intérieure" onclick="zoomImage(this)">
+      <img src="img/3d2.jpg" alt="Maquette 3D Intérieure" onclick="zoomImage(this)">
+      <img src="img/3d3.jpg" alt="Maquette 3D Intérieure" onclick="zoomImage(this)">
+      
+      <img src="img/3d1.jpg" alt="Maquette 3D Intérieure" onclick="zoomImage(this)">
+      <img src="img/3d2.jpg" alt="Maquette 3D Intérieure" onclick="zoomImage(this)">
+      <img src="img/3d3.jpg" alt="Maquette 3D Intérieure" onclick="zoomImage(this)">
+    </div>
+  </div>
+<!-- Carte et texte à côté -->
+<div class="map-container" style="width: 100%; height: 5cm; margin-top: 20px; display: flex; justify-content: space-between; overflow: hidden;">
+  <!-- Iframe de la carte -->
+  <div style="flex: 1;">
+   <iframe width="1000" height="500" src="https://www.bing.com/maps/embed?h=500&w=1000&cp=33.795697~-6.82563&lvl=15.0&style=h&pushpin=33.795697~-6.82563_red" frameborder="0" scrolling="no"></iframe>
+
+            style="width: 100%; height: 100%; border: none; overflow: hidden;">
+    </iframe>
+  </div>
+  
+  <!-- Texte à côté de la carte -->
+  <div style="flex: 0 0 25%; padding-left: 20px;">
+    <h3>Adresse :</h3>
+    <p>LOG 1140 TR 21 LOTS AL FIRDAOUS AIN EL AOUDA 12100</p>
+    <h4>Téléphone :</h4>
+    <p>06-63-87-66-44</p>
+    <h4>Email :</h4>
+    <p>Maqtop.contacts@gmail.com</p>
+  </div>
+</div>
+  <!-- Pied de page -->
+  <footer>
+    <p>&copy; 2024 MAQTOP. Tous droits réservés.</p>
+  </footer>
+
+  <!-- Zoom d'image -->
+  <div id="zoomed-image" class="zoomed-image" onclick="closeZoom()">
+    <img id="zoomed-img" src="" alt="Zoomed Image">
+  </div>
+
+  <script>
+    // Zoom d'image
+    function zoomImage(img) {
+      var zoomedImage = document.getElementById('zoomed-image');
+      var zoomedImg = document.getElementById('zoomed-img');
+      zoomedImg.src = img.src;
+      zoomedImage.style.display = "block";
+    }
+
+    function closeZoom() {
+      var zoomedImage = document.getElementById('zoomed-image');
+      zoomedImage.style.display = "none";
+    }
+
+   let currentIndex = 0;
+const images = document.querySelectorAll('.carousel img');
+const totalImages = images.length;
+
+// Mettre à jour le carrousel pour afficher une image à la fois
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % totalImages; // Passe à l'image suivante (en boucle)
+  document.querySelector('.carousel').style.transform = `translateX(-${currentIndex * 10}cm)`; // Déplace le carrousel d'une image
+}, 2000); // Intervalle de 2 secondes
+  </script>
+  
+<!-- CSS pour le bouton flottant et formulaire -->
+<style>
+/* Bouton WhatsApp */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  padding: 10px 25px; /* Utilisez des valeurs plus raisonnables */
+  border-radius: 50px;
+  font-size: 1.5rem; /* Augmente la taille du texte */
+  z-index: 1000;
+  text-decoration: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  
+}
+    /* Bouton "Demander un devis" */
+    .quote-button {
+     
+  position: fixed;
+  bottom: 20px;
+  right: calc(40px + 4cm);
+  background-color: #007bff;
+  color: white;
+  padding: 10px 25px; /* Utilisez des valeurs plus raisonnables */
+  border-radius: 50px;
+  font-size: 1rem; /* Augmente la taille du texte */
+  z-index: 1000;
+  text-decoration: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .quote-button:hover {
+        background-color: #0056b3;
+    }
+
+    /* Formulaire caché */
+    .quote-form {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        z-index: 999;
+    }
+
+    .quote-form input, .quote-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+    }
+
+    .quote-form .submit-button {
+        width: 100%;
+        padding: 10px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .quote-form .submit-button:hover {
+        background-color: #218838;
+    }
+
+    .quote-form .close-button {
+        width: 100%;
+        padding: 10px;
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .quote-form .close-button:hover {
+        background-color: #c82333;
+    }
+</style>
+<!-- Bouton "Demander un devis" et formulaire avec bouton "Fermer" -->
+<button id="quoteButton" class="quote-button">Demander un devis</button>
+
+<div id="quoteForm" class="quote-form" style="display: none;">
+    <h3>Demander un devis</h3>
+    <!-- Formulaire qui envoie les données à send_quote.php -->
+    <form action="send_quote.php" method="POST" enctype="multipart/form-data">
+        <input type="text" name="name" id="name" placeholder="Nom" required>
+        <input type="text" name="company_name" id="company_name" placeholder="Nom de l'entreprise" required>
+        <input type="text" name="project_name" id="project_name" placeholder="Nom du projet" required>
+        <textarea name="description" id="description" placeholder="Description demandée" rows="4" required></textarea>
+        <input type="text" name="phone" id="phone" placeholder="Numéro" required>
+        <input type="file" name="file" id="file" required>
+        <button type="submit" class="submit-button">Envoyer</button>
+        <button type="button" class="close-button" onclick="closeForm()">Fermer</button>
+    </form>
+</div>
+
+<!-- JavaScript pour afficher/masquer le formulaire -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Ouvrir le formulaire au clic du bouton principal
+        document.getElementById("quoteButton").onclick = function() {
+            document.getElementById("quoteForm").style.display = "block";
+        };
+
+        // Fermer le formulaire en cliquant sur "Fermer"
+        window.closeForm = function() {
+            document.getElementById("quoteForm").style.display = "none";
+        };
+    });
+</script>
+
+</body>
+</html>
