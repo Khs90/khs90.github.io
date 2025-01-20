@@ -1,0 +1,32 @@
+/* CSS pour la carte */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  h1, p {
+    margin: 10px 20px;
+  }
+
+  h1 {
+    font-size: 2rem; /* Taille adaptée aux écrans d'ordinateur */
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  /* Responsive pour les petits écrans */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.5rem; /* Réduction de la taille du titre */
+    }
+
+    p {
+      font-size: 0.9rem; /* Réduction de la taille des paragraphes */
+    }
+  }
