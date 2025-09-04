@@ -1,354 +1,820 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>M A Q T O P - Societé de Réalisation des Maquettes 3D Architecturales au Maroc</title>
-  <meta name="description" content="Maqtop, spécialiste de la fabrication et réalisation des Maquettes 3D architecturales et industrielles au Maroc. Découvrez notre expertise en réalisation des Maquettes 3D architecturales au Maroc.">
- <!-- Lien vers le fichier CSS -->
-   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-    body {
-        margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f8;
-    color: #333;
-    justify-content: center;
-     align-items: center; /* Centrer verticalement */
-    min-height: 100vh; /* Assurer la hauteur complète de l'écran */
-    text-align: center; /* Centrer le texte à l'intérieur */
-    line-height: 150%; }
-    /* En-tête */
-    header { display: flex; align-items: center; justify-content: center; height:80px; background: #1e3a8a; color: #fff; 
-    font-size: 1.3rem; font-weight: bold; font-family: 'Arial', sans-serif; /* Police moderne et lisible */}
-    /* Image de fond avec texte superposé */
-    .hero { position: relative; height: 300px; background-image: url('img/ariere.jpg'); background-size: cover; background-position: center; color: white; display: flex; align-items: center; justify-content: center; }
-    .hero-text { background: rgba(0, 0, 0, 0.1); padding: 20px; max-width: 100%; text-align: center; }
-    /* Carrousel - image par image */
-    .carousel-container { position: relative; overflow: hidden; width: 100%; height: 40vh; margin-top: 0.1cm; margin-bottom: 0.1cm}
-    .carousel { display: flex; transition: transform 0.5s ease; width: 100%; }
-    .carousel img { width: 8cm; height: 8cm; object-fit: cover; object-position: center; margin: 0.1cm; }
-/* Carte et texte à côté */
-.map-container {
-    width: 100%;
-    height: auto; /* Laisse le contenu ajuster la hauteur */
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap; /* Permet d'ajuster les éléments sur plusieurs lignes */
-    gap: 20px;
-}
-
-.map-container iframe {
-    width: 100%; /* Adapte la largeur à l'écran */
-    height: 40vh; /* Hauteur relative à la taille de l'écran */
-    border: none;
-    overflow: hidden;
-    margin: 0;
-}
-
-.map-info {
-    flex: 1 1 300px; /* Minimum 300px, ajuste selon l'espace */
-    padding: 1rem; /* Unité relative */
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    color: #333;
-    font-size: 1rem;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAQTOP - Société de Réalisation des Maquettes 3D Architecturales au Maroc</title>
+    <meta name="description" content="Maqtop, spécialiste de la fabrication et réalisation des Maquettes 3D architecturales et industrielles au Maroc.">
     
-       /* Carte et texte à côté */
-    .map-container { width: 100%; height: 5cm; margin-top: 20px; display: flex; justify-content: space-between; }
-    .map-container iframe { width: 100%; height: 100%; border: none; overflow: hidden; margin: 0; }
-
-    .map-info { width: 28%; padding: 1cm; background-color: #ffffff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px; color: #333; font-size: 1rem; }
-
-    /* Galerie et zoom d'images */
-    .gallery-container { margin: 40px 0; }
-    .gallery { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-    .gallery img { width: 10cm; height: 8cm; border-radius: 8px; cursor: pointer; transition: transform 0.3s; }
-    .gallery img.zoomed { transform: scale(1.5); z-index: 100; }
-    .zoomed-image { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 90%; max-height: 90%; z-index: 1000; background-color: rgba(0, 0, 0, 0.8); display: none; }
-    .zoomed-image img { width: 10cm; height: auto; border-radius: 20px; }
-    .zoomed-image:target { display: block; }
-
-    /* Pied de page */
-    footer { background-color: #1e3a8a; color: #fff; padding: 20px; text-align: center; }
-
-    /* Styles pour chaque catégorie avec couleur et marges */
-    .category { margin: 0.5cm 0; padding: 1cm; border-radius: 10px; }
-    .category h2 { margin-bottom: 10px; font-size: 1.8rem; color: #004d40; }
-    .category p { font-size: 1.1rem; color: #00796b; }
-
-    /* Catégorie 1 (exemple avec couleur différente) */
-    .category-1 { background-color: #e0f7fa; color: #00796b; }
-    .category-2 { background-color: #fce4ec; color: #c2185b; }
-    .category-3 { background-color: #fff3e0; color: #ff6f00; }
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-black': '#0B0C10',
+                        'royal-gold': '#FFD700',
+                        'platinum': '#E5E7EB',
+                        'sapphire': '#1D4ED8',
+                    },
+                    fontFamily: {
+                        'cinzel': ['Cinzel Decorative', 'serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     
-
-     </style>
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --deep-black: #0B0C10;
+            --royal-gold: #FFD700;
+            --platinum: #E5E7EB;
+            --sapphire: #1D4ED8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--deep-black);
+            color: var(--platinum);
+            overflow-x: hidden;
+        }
+        
+        .glass-effect {
+            background: rgba(11, 12, 16, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(135deg, var(--royal-gold), #daa520);
+        }
+        
+        .gold-text-gradient {
+            background: linear-gradient(135deg, var(--royal-gold), #daa520);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--royal-gold);
+        }
+        
+        .service-step {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .service-step.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .portfolio-item {
+            transition: all 0.4s ease;
+            transform-style: preserve-3d;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .testimonial-card {
+            perspective: 1000px;
+            transform-style: preserve-3d;
+            transition: transform 0.8s ease;
+        }
+        
+        .step-form {
+            display: none;
+        }
+        
+        .step-form.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--deep-black);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease;
+        }
+        
+        .loading-logo {
+            width: 100px;
+            height: 100px;
+            background: var(--royal-gold);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: pulse 2s infinite;
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background: var(--royal-gold);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--royal-gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+        
+        .shimmer-text {
+            background: linear-gradient(
+                90deg,
+                rgba(255, 215, 0, 0.2),
+                var(--royal-gold),
+                rgba(255, 215, 0, 0.2)
+            );
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s infinite linear;
+        }
+    </style>
 </head>
-<body>
-  <!-- En-tête -->
-  <header>MAQTOP - Societé de Réalisation des Maquettes 3D Architecturales au Maroc</header>
-  
-  <!-- Image de fond avec texte superposé -->
-  <div class="hero">
-    <div class="hero-text">
-      <h2>Réalisation des Maquettes 3D  d'Architecture</h2>
-      <p>RÉALISEZ VOS PROJETS EN TOUTE CONFIANCE - Maquettes 3D  d'Architecture - TRAVAUX DE QUALITÉ - CONSEIL & DEVIS GRATUITS</p>
+<body class="antialiased" x-data="appData()">
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo">
+            <i class="fas fa-drafting-compass text-3xl text-deep-black"></i>
+        </div>
     </div>
-  </div>
-  
-   <!-- Boutons flottants -->
-  <a href="https://wa.me/0663876644" target="_blank" class="whatsapp-button">WhatsApp</a>
 
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-effect py-4 px-8">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-cinzel font-bold gold-text-gradient">
+                <i class="fas fa-drafting-compass mr-2"></i>MAQTOP
+            </a>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-platinum hover:text-royal-gold transition">Accueil</a>
+                <a href="#about" class="nav-link text-platinum hover:text-royal-gold transition">À Propos</a>
+                <a href="#services" class="nav-link text-platinum hover:text-royal-gold transition">Services</a>
+                <a href="#portfolio" class="nav-link text-platinum hover:text-royal-gold transition">Portfolio</a>
+                <a href="#testimonials" class="nav-link text-platinum hover:text-royal-gold transition">Témoignages</a>
+                <a href="#contact" class="nav-link text-platinum hover:text-royal-gold transition">Contact</a>
+            </div>
+            
+            <div class="md:hidden">
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-platinum hover:text-royal-gold">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" class="md:hidden glass-effect mt-4 p-4 rounded-lg" style="display: none;">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="nav-link text-platinum hover:text-royal-gold transition">Accueil</a>
+                <a href="#about" class="nav-link text-platinum hover:text-royal-gold transition">À Propos</a>
+                <a href="#services" class="nav-link text-platinum hover:text-royal-gold transition">Services</a>
+                <a href="#portfolio" class="nav-link text-platinum hover:text-royal-gold transition">Portfolio</a>
+                <a href="#testimonials" class="nav-link text-platinum hover:text-royal-gold transition">Témoignages</a>
+                <a href="#contact" class="nav-link text-platinum hover:text-royal-gold transition">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-  <!-- Carrousel -->
-  <div class="carousel-container">
-    <div class="carousel">
-      <img src="img/maquette1.jpg" alt="Maquette Architecturale" onclick="zoomImage(this)">
-      <img src="img/maquette2.jpg" alt="Maquette Architecturale" onclick="zoomImage(this)">
-      <img src="img/maquette3.jpg" alt="Maquette Architecturale" onclick="zoomImage(this)">
-      <img src="img/industrielle1.jpg" alt="Maquette Industrielle" onclick="zoomImage(this)">
-      <img src="img/industrielle2.jpg" alt="Maquette Industrielle" onclick="zoomImage(this)">
-      <img src="img/industrielle3.jpg" alt="Maquette Industrielle" onclick="zoomImage(this)">
-      <img src="img/3d1.jpg" alt="Maquette 3D Intérieure" onclick="zoomImage(this)">
-      <img src="img/3d2.jpg" alt="Maquette 3D Intérieure" onclick="zoomImage(this)">
-      <img src="img/3d3.jpg" alt="Maquette 3D Intérieure" onclick="zoomImage(this)">
-      <img src="img/10.jpg" alt="Image 10">
-      <img src="img/11.jpg" alt="Image 11">
-      <img src="img/12.jpg" alt="Image 12">
-      <img src="img/13.jpg" alt="Image 13">
-      <img src="img/14.jpg" alt="Image 14">
-      <img src="img/10.jpg" alt="Image 15">
-      <img src="img/11.jpg" alt="Image 16">
-      <img src="img/12.jpg" alt="Image 17">
-      <img src="img/13.jpg" alt="Image 18">
-      <img src="img/14.jpg" alt="Image 19">
-      <img src="img/10.jpg" alt="Image 20">
-      <img src="img/11.jpg" alt="Image 21">
-      <img src="img/12.jpg" alt="Image 22">
-      <img src="img/13.jpg" alt="Image 23">
-      <img src="img/14.jpg" alt="Image 24">
-    </div>
-  </div>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-deep-black opacity-80"></div>
+            <!-- Video background would go here -->
+            <div class="w-full h-full bg-gradient-to-br from-deep-black to-sapphire opacity-30"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 z-10 text-center">
+            <h1 class="text-5xl md:text-7xl font-cinzel font-bold mb-6 shimmer-text">
+                Crafting Timeless Architectural Models
+            </h1>
+            <p class="text-xl md:text-2xl text-platinum mb-10 max-w-3xl mx-auto">
+                RÉALISEZ VOS PROJETS EN TOUTE CONFIANCE - Maquettes 3D d'Architecture - TRAVAUX DE QUALITÉ
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-6">
+                <a href="#services" class="gold-gradient text-deep-black font-semibold py-3 px-8 rounded-full transform transition hover:scale-105 hover:shadow-lg">
+                    Explore Services
+                </a>
+                <a href="#contact" class="border-2 border-royal-gold text-royal-gold font-semibold py-3 px-8 rounded-full transform transition hover:scale-105 hover:shadow-lg">
+                    Request Quote
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+            <a href="#about" class="text-platinum hover:text-royal-gold animate-bounce">
+                <i class="fas fa-chevron-down text-3xl"></i>
+            </a>
+        </div>
+    </section>
 
-  <!-- Catégories de Maquettes 3D -->
-  <div class="category category-1">
-    <h2>Maquettes 3D Architecturales</h2>
-    <p>Les Maquettes 3D architecturales au Maroc sont conçues avec une précision exceptionnelle pour répondre à vos besoins spécifiques en termes de conception et de détails. Chaque projet est unique et fait l'objet d'une attention particulière.</p>
-    <div class="gallery">
-      <img src="img/maquette1.jpg" alt="Maquette Architecturale" onclick="zoomImage(this)">
-      <img src="img/maquette2.jpg" alt="Maquette Architecturale" onclick="zoomImage(this)">
-      <img src="img/maquette3.jpg" alt="Maquette Architecturale" onclick="zoomImage(this)">
-      <img src="img/maquette1.jpg" alt="Maquette Architecturale" onclick="zoomImage(this)">
-      <img src="img/maquette2.jpg" alt="Maquette Architecturale" onclick="zoomImage(this)">
-      <img src="img/maquette3.jpg" alt="Maquette Architecturale" onclick="zoomImage(this)">
-    </div>
-  </div>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-deep-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-cinzel font-bold text-royal-gold mb-16 text-center section-title mx-auto">Our Story</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="flex items-start space-x-6">
+                        <div class="text-royal-gold text-3xl">
+                            <i class="fas fa-flag"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-cinzel text-platinum mb-2">Founded with Vision</h3>
+                            <p class="text-platinum">Maqtop was established with a clear vision to revolutionize architectural model creation in Morocco.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-6">
+                        <div class="text-royal-gold text-3xl">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-cinzel text-platinum mb-2">Innovation & Excellence</h3>
+                            <p class="text-platinum">We continuously innovate to deliver exceptional quality and precision in every project.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-6">
+                        <div class="text-royal-gold text-3xl">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-cinzel text-platinum mb-2">Client Partnerships</h3>
+                            <p class="text-platinum">Building long-term relationships with architects, developers, and visionaries across Morocco.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="glass-effect rounded-2xl p-6">
+                        <img src="https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Architectural Model" class="rounded-xl w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="category category-2">
-    <h2>Maquettes 3D Industrielles</h2>
-    <p>Nos Maquettes 3D industrielles sont idéales pour visualiser les infrastructures et processus complexes, permettant de rendre les projets industriels plus accessibles et compréhensibles.</p>
-    <div class="gallery">
-      <img src="img/industrielle1.jpg" alt="Maquette Industrielle" onclick="zoomImage(this)">
-      <img src="img/industrielle2.jpg" alt="Maquette Industrielle" onclick="zoomImage(this)">
-      <img src="img/industrielle3.jpg" alt="Maquette Industrielle" onclick="zoomImage(this)">
-      
-      <img src="img/industrielle1.jpg" alt="Maquette Industrielle" onclick="zoomImage(this)">
-      <img src="img/industrielle2.jpg" alt="Maquette Industrielle" onclick="zoomImage(this)">
-      <img src="img/industrielle3.jpg" alt="Maquette Industrielle" onclick="zoomImage(this)">
-    </div>
-  </div>
+    <!-- Services Section -->
+    <section id="services" class="py-20 relative">
+        <div class="absolute inset-0 bg-deep-black opacity-95"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <h2 class="text-4xl font-cinzel font-bold text-royal-gold mb-4 text-center">Our Services</h2>
+            <p class="text-xl text-platinum mb-16 text-center max-w-3xl mx-auto">Discover our comprehensive range of architectural model services</p>
+            
+            <div class="max-w-5xl mx-auto">
+                <!-- Service Steps Navigation -->
+                <div class="flex justify-center mb-12">
+                    <div class="glass-effect rounded-full p-2 flex">
+                        <button @click="setActiveService(0)" :class="{'gold-gradient text-deep-black': activeService === 0, 'text-platinum': activeService !== 0}" 
+                                class="px-6 py-3 rounded-full transition">Architectural</button>
+                        <button @click="setActiveService(1)" :class="{'gold-gradient text-deep-black': activeService === 1, 'text-platinum': activeService !== 1}" 
+                                class="px-6 py-3 rounded-full transition">Industrial</button>
+                        <button @click="setActiveService(2)" :class="{'gold-gradient text-deep-black': activeService === 2, 'text-platinum': activeService !== 2}" 
+                                class="px-6 py-3 rounded-full transition">Interior</button>
+                    </div>
+                </div>
+                
+                <!-- Service Steps Content -->
+                <div class="relative h-96">
+                    <!-- Service 1 -->
+                    <div x-show="activeService === 0" class="service-step absolute inset-0 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="text-center md:text-right">
+                            <i class="fas fa-building text-royal-gold text-6xl mb-6"></i>
+                            <h3 class="text-3xl font-cinzel text-royal-gold mb-4">Maquettes Architecturales</h3>
+                            <p class="text-platinum">Les Maquettes 3D architecturales au Maroc sont conçues avec une précision exceptionnelle pour répondre à vos besoins spécifiques en termes de conception et de détails.</p>
+                        </div>
+                        <div class="flex justify-center md:justify-start">
+                            <div class="glass-effect rounded-2xl p-2">
+                                <img src="https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Architectural Model" class="rounded-xl w-full h-64 object-cover">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 2 -->
+                    <div x-show="activeService === 1" class="service-step absolute inset-0 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="text-center md:text-right">
+                            <i class="fas fa-industry text-royal-gold text-6xl mb-6"></i>
+                            <h3 class="text-3xl font-cinzel text-royal-gold mb-4">Maquettes Industrielles</h3>
+                            <p class="text-platinum">Nos Maquettes 3D industrielles sont idéales pour visualiser les infrastructures et processus complexes, permettant de rendre les projets industriels plus accessibles et compréhensibles.</p>
+                        </div>
+                        <div class="flex justify-center md:justify-start">
+                            <div class="glass-effect rounded-2xl p-2">
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Industrial Model" class="rounded-xl w-full h-64 object-cover">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 3 -->
+                    <div x-show="activeService === 2" class="service-step absolute inset-0 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="text-center md:text-right">
+                            <i class="fas fa-couch text-royal-gold text-6xl mb-6"></i>
+                            <h3 class="text-3xl font-cinzel text-royal-gold mb-4">Maquettes Intérieures</h3>
+                            <p class="text-platinum">Les Maquettes 3D intérieures sont la solution parfaite pour les designers d'intérieur et les architectes, offrant une vue réaliste de l'espace avant toute construction ou rénovation.</p>
+                        </div>
+                        <div class="flex justify-center md:justify-start">
+                            <div class="glass-effect rounded-2xl p-2">
+                                <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Interior Model" class="rounded-xl w-full h-64 object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="category category-3">
-    <h2>Maquettes 3D 3D Intérieures</h2>
-    <p>Les Maquettes 3D 3D intérieures sont la solution parfaite pour les designers d'intérieur et les architectes, offrant une vue réaliste de l'espace avant toute construction ou rénovation.</p>
-    <div class="gallery">
-      <img src="img/3d1.jpg" alt="Maquette 3D Intérieure" onclick="zoomImage(this)">
-      <img src="img/3d2.jpg" alt="Maquette 3D Intérieure" onclick="zoomImage(this)">
-      <img src="img/3d3.jpg" alt="Maquette 3D Intérieure" onclick="zoomImage(this)">
-      
-      <img src="img/3d1.jpg" alt="Maquette 3D Intérieure" onclick="zoomImage(this)">
-      <img src="img/3d2.jpg" alt="Maquette 3D Intérieure" onclick="zoomImage(this)">
-      <img src="img/3d3.jpg" alt="Maquette 3D Intérieure" onclick="zoomImage(this)">
-    </div>
-  </div>
-<!-- Carte et texte à côté -->
-<div class="map-container" style="width: 100%; height: 5cm; margin-top: 20px; display: flex; justify-content: space-between; overflow: hidden;">
-  <!-- Iframe de la carte -->
-  <div style="flex: 1;">
-   <iframe width="1000" height="500" src="https://www.bing.com/maps/embed?h=500&w=1000&cp=33.795697~-6.82563&lvl=15.0&style=h&pushpin=33.795697~-6.82563_red" frameborder="0" scrolling="no"></iframe>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-deep-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-cinzel font-bold text-royal-gold mb-4 text-center">Our Portfolio</h2>
+            <p class="text-xl text-platinum mb-12 text-center max-w-3xl mx-auto">Explore our exceptional collection of architectural models</p>
+            
+            <!-- Portfolio Filter -->
+            <div class="flex justify-center mb-12">
+                <div class="glass-effect rounded-full p-2 flex">
+                    <button class="px-6 py-3 rounded-full text-platinum hover:bg-royal-gold hover:text-deep-black transition">All</button>
+                    <button class="px-6 py-3 rounded-full text-platinum hover:bg-royal-gold hover:text-deep-black transition">Residential</button>
+                    <button class="px-6 py-3 rounded-full text-platinum hover:bg-royal-gold hover:text-deep-black transition">Commercial</button>
+                    <button class="px-6 py-3 rounded-full text-platinum hover:bg-royal-gold hover:text-deep-black transition">3D Printing</button>
+                </div>
+            </div>
+            
+            <!-- Portfolio Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item glass-effect rounded-2xl overflow-hidden">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Project" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-cinzel text-royal-gold mb-2">Residential Complex</h3>
+                        <p class="text-platinum">Modern residential complex model with detailed surroundings.</p>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item glass-effect rounded-2xl overflow-hidden">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Project" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-cinzel text-royal-gold mb-2">Commercial Building</h3>
+                        <p class="text-platinum">Innovative commercial space design for urban development.</p>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item glass-effect rounded-2xl overflow-hidden">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Project" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-cinzel text-royal-gold mb-2">Industrial Facility</h3>
+                        <p class="text-platinum">Detailed industrial facility model with functional elements.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="gold-gradient text-deep-black font-semibold py-3 px-8 rounded-full transform transition hover:scale-105 hover:shadow-lg">
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
 
-            style="width: 100%; height: 100%; border: none; overflow: hidden;">
-    </iframe>
-  </div>
-  
-  <!-- Texte à côté de la carte -->
-  <div style="flex: 0 0 25%; padding-left: 20px;">
-    <h3>Adresse :</h3>
-    <p>LOG 1140 TR 21 LOTS AL FIRDAOUS AIN EL AOUDA 12100</p>
-    <h4>Téléphone :</h4>
-    <p>06-63-87-66-44</p>
-    <h4>Email :</h4>
-    <p>Maqtop.contacts@gmail.com</p>
-  </div>
-</div>
-  <!-- Pied de page -->
-  <footer>
-    <p>&copy; 2024 MAQTOP. Tous droits réservés.</p>
-  </footer>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 relative">
+        <div class="absolute inset-0 bg-deep-black opacity-95"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <h2 class="text-4xl font-cinzel font-bold text-royal-gold mb-16 text-center">Client Testimonials</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="testimonial-card glass-effect rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full gold-gradient flex items-center justify-center text-deep-black text-2xl font-bold">
+                            JD
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-xl font-cinzel text-royal-gold">Jean Dupont</h3>
+                            <p class="text-platinum">Architect at DesignPlus</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-platinum italic text-lg">
+                        "Maqtop a transformé notre vision en un modèle architectural exceptionnel. Leur attention aux détails et leur professionnalisme sont remarquables. Je recommande vivement leurs services."
+                    </p>
+                    
+                    <div class="flex mt-6">
+                        <i class="fas fa-star text-royal-gold"></i>
+                        <i class="fas fa-star text-royal-gold"></i>
+                        <i class="fas fa-star text-royal-gold"></i>
+                        <i class="fas fa-star text-royal-gold"></i>
+                        <i class="fas fa-star text-royal-gold"></i>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center mt-8">
+                    <button class="w-3 h-3 rounded-full bg-royal-gold mx-1"></button>
+                    <button class="w-3 h-3 rounded-full bg-platinum opacity-30 mx-1"></button>
+                    <button class="w-3 h-3 rounded-full bg-platinum opacity-30 mx-1"></button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Zoom d'image -->
-  <div id="zoomed-image" class="zoomed-image" onclick="closeZoom()">
-    <img id="zoomed-img" src="" alt="Zoomed Image">
-  </div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-deep-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-cinzel font-bold text-royal-gold mb-4 text-center">Request a Quote</h2>
+            <p class="text-xl text-platinum mb-12 text-center max-w-3xl mx-auto">Get in touch with us for a personalized quote</p>
+            
+            <div class="max-w-3xl mx-auto glass-effect rounded-2xl p-8">
+                <!-- Progress Bar -->
+                <div class="mb-8">
+                    <div class="flex justify-between mb-2">
+                        <span class="text-platinum">Step <span x-text="currentStep"></span> of 4</span>
+                        <span class="text-royal-gold" x-text="Math.round((currentStep/4)*100) + '%'"></span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="progress-bar h-2 rounded-full" :style="'width: ' + (currentStep/4)*100 + '%'"></div>
+                    </div>
+                </div>
+                
+                <!-- Multi-step Form -->
+                <form>
+                    <!-- Step 1 -->
+                    <div x-show="currentStep === 1" class="step-form active">
+                        <h3 class="text-2xl font-cinzel text-royal-gold mb-6">Personal Information</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-platinum mb-2">Full Name *</label>
+                                <input type="text" class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-platinum mb-2">Email Address *</label>
+                                <input type="email" class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-platinum mb-2">Phone Number *</label>
+                                <input type="tel" class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-platinum mb-2">Company Name</label>
+                                <input type="text" class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold">
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between mt-8">
+                            <div></div> <!-- Empty div for spacing -->
+                            <button type="button" @click="nextStep()" class="gold-gradient text-deep-black font-semibold py-3 px-8 rounded-full transform transition hover:scale-105">
+                                Next <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div x-show="currentStep === 2" class="step-form">
+                        <h3 class="text-2xl font-cinzel text-royal-gold mb-6">Project Details</h3>
+                        
+                        <div class="grid grid-cols-1 gap-6">
+                            <div>
+                                <label class="block text-platinum mb-2">Project Type *</label>
+                                <select class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required>
+                                    <option value="">Select Project Type</option>
+                                    <option value="architectural">Architectural Model</option>
+                                    <option value="industrial">Industrial Model</option>
+                                    <option value="interior">Interior Model</option>
+                                    <option value="urban">Urban Planning Model</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-platinum mb-2">Project Description *</label>
+                                <textarea rows="4" class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between mt-8">
+                            <button type="button" @click="prevStep()" class="border border-royal-gold text-royal-gold font-semibold py-3 px-8 rounded-full transform transition hover:scale-105">
+                                <i class="fas fa-arrow-left mr-2"></i> Back
+                            </button>
+                            <button type="button" @click="nextStep()" class="gold-gradient text-deep-black font-semibold py-3 px-8 rounded-full transform transition hover:scale-105">
+                                Next <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div x-show="currentStep === 3" class="step-form">
+                        <h3 class="text-2xl font-cinzel text-royal-gold mb-6">Budget & Timeline</h3>
+                        
+                        <div class="grid grid-cols-1 gap-6">
+                            <div>
+                                <label class="block text-platinum mb-2">Estimated Budget *</label>
+                                <select class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required>
+                                    <option value="">Select Budget Range</option>
+                                    <option value="5000">5,000 - 10,000 MAD</option>
+                                    <option value="10000">10,000 - 20,000 MAD</option>
+                                    <option value="20000">20,000 - 50,000 MAD</option>
+                                    <option value="50000">50,000+ MAD</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-platinum mb-2">Desired Timeline *</label>
+                                <select class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required>
+                                    <option value="">Select Timeline</option>
+                                    <option value="urgent">Urgent (1-2 weeks)</option>
+                                    <option value="normal">Normal (3-4 weeks)</option>
+                                    <option value="flexible">Flexible (1-2 months)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between mt-8">
+                            <button type="button" @click="prevStep()" class="border border-royal-gold text-royal-gold font-semibold py-3 px-8 rounded-full transform transition hover:scale-105">
+                                <i class="fas fa-arrow-left mr-2"></i> Back
+                            </button>
+                            <button type="button" @click="nextStep()" class="gold-gradient text-deep-black font-semibold py-3 px-8 rounded-full transform transition hover:scale-105">
+                                Next <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div x-show="currentStep === 4" class="step-form">
+                        <h3 class="text-2xl font-cinzel text-royal-gold mb-6">Final Details</h3>
+                        
+                        <div class="grid grid-cols-1 gap-6">
+                            <div>
+                                <label class="block text-platinum mb-2">Additional Files</label>
+                                <div class="flex items-center justify-center w-full">
+                                    <label class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-600 rounded-lg cursor-pointer glass-effect hover:border-royal-gold">
+                                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                            <i class="fas fa-cloud-upload-alt text-royal-gold text-3xl mb-2"></i>
+                                            <p class="text-sm text-platinum">Drag & drop or click to upload files</p>
+                                        </div>
+                                        <input type="file" class="hidden" multiple>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="rounded glass-effect border-gray-600 text-royal-gold focus:ring-royal-gold">
+                                    <span class="ml-2 text-platinum">I agree to the terms and conditions</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between mt-8">
+                            <button type="button" @click="prevStep()" class="border border-royal-gold text-royal-gold font-semibold py-3 px-8 rounded-full transform transition hover:scale-105">
+                                <i class="fas fa-arrow-left mr-2"></i> Back
+                            </button>
+                            <button type="submit" class="gold-gradient text-deep-black font-semibold py-3 px-8 rounded-full transform transition hover:scale-105">
+                                Submit Request
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    // Zoom d'image
-    function zoomImage(img) {
-      var zoomedImage = document.getElementById('zoomed-image');
-      var zoomedImg = document.getElementById('zoomed-img');
-      zoomedImg.src = img.src;
-      zoomedImage.style.display = "block";
-    }
+    <!-- Footer -->
+    <footer class="py-12 bg-deep-black border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-cinzel font-bold gold-text-gradient mb-4">MAQTOP</h3>
+                    <p class="text-platinum mb-4">Spécialistes de la fabrication et réalisation des maquettes 3D architecturales et industrielles au Maroc.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-platinum hover:text-royal-gold transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-platinum hover:text-royal-gold transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-platinum hover:text-royal-gold transition"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-platinum hover:text-royal-gold transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-cinzel text-royal-gold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-platinum hover:text-royal-gold transition">Home</a></li>
+                        <li><a href="#about" class="text-platinum hover:text-royal-gold transition">About</a></li>
+                        <li><a href="#services" class="text-platinum hover:text-royal-gold transition">Services</a></li>
+                        <li><a href="#portfolio" class="text-platinum hover:text-royal-gold transition">Portfolio</a></li>
+                        <li><a href="#contact" class="text-platinum hover:text-royal-gold transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-cinzel text-royal-gold mb-4">Our Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-platinum hover:text-royal-gold transition">Architectural Models</a></li>
+                        <li><a href="#" class="text-platinum hover:text-royal-gold transition">Industrial Models</a></li>
+                        <li><a href="#" class="text-platinum hover:text-royal-gold transition">Interior Models</a></li>
+                        <li><a href="#" class="text-platinum hover:text-royal-gold transition">Urban Planning</a></li>
+                        <li><a href="#" class="text-platinum hover:text-royal-gold transition">3D Printing</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-cinzel text-royal-gold mb-4">Contact Info</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-royal-gold mt-1 mr-3"></i>
+                            <span class="text-platinum">LOG 1140 TR 21 LOTS AL FIRDAOUS AIN EL AOUDA 12100</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-royal-gold mr-3"></i>
+                            <span class="text-platinum">06-63-87-66-44</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-royal-gold mr-3"></i>
+                            <span class="text-platinum">Maqtop.contacts@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-platinum">&copy; 2024 MAQTOP. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
 
-    function closeZoom() {
-      var zoomedImage = document.getElementById('zoomed-image');
-      zoomedImage.style.display = "none";
-    }
+    <!-- Hidden link as requested -->
+    <a href="hicham0sl.html" class="hidden">Hicham0sl</a>
 
-   let currentIndex = 0;
-const images = document.querySelectorAll('.carousel img');
-const totalImages = images.length;
-
-// Mettre à jour le carrousel pour afficher une image à la fois
-setInterval(() => {
-  currentIndex = (currentIndex + 1) % totalImages; // Passe à l'image suivante (en boucle)
-  document.querySelector('.carousel').style.transform = `translateX(-${currentIndex * 10}cm)`; // Déplace le carrousel d'une image
-}, 2000); // Intervalle de 2 secondes
-  </script>
-  
-<!-- CSS pour le bouton flottant et formulaire -->
-<style>
-/* Bouton WhatsApp */
-.whatsapp-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25d366;
-  color: white;
-  padding: 10px 25px; /* Utilisez des valeurs plus raisonnables */
-  border-radius: 50px;
-  font-size: 1.5rem; /* Augmente la taille du texte */
-  z-index: 1000;
-  text-decoration: none;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  
-}
-    /* Bouton "Demander un devis" */
-    .quote-button {
-     
-  position: fixed;
-  bottom: 20px;
-  right: calc(40px + 4cm);
-  background-color: #007bff;
-  color: white;
-  padding: 10px 25px; /* Utilisez des valeurs plus raisonnables */
-  border-radius: 50px;
-  font-size: 1rem; /* Augmente la taille du texte */
-  z-index: 1000;
-  text-decoration: none;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .quote-button:hover {
-        background-color: #0056b3;
-    }
-
-    /* Formulaire caché */
-    .quote-form {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        width: 400px;
-        z-index: 999;
-    }
-
-    .quote-form input, .quote-form textarea {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        border-radius: 5px;
-        border: 1px solid #ddd;
-    }
-
-    .quote-form .submit-button {
-        width: 100%;
-        padding: 10px;
-        background-color: #28a745;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        margin-bottom: 10px;
-    }
-
-    .quote-form .submit-button:hover {
-        background-color: #218838;
-    }
-
-    .quote-form .close-button {
-        width: 100%;
-        padding: 10px;
-        background-color: #dc3545;
-        color: white;
-        border: none;
-        border-radius: 5px;
-    }
-
-    .quote-form .close-button:hover {
-        background-color: #c82333;
-    }
-</style>
-<!-- Bouton "Demander un devis" et formulaire avec bouton "Fermer" -->
-<button id="quoteButton" class="quote-button">Demander un devis</button>
-
-<div id="quoteForm" class="quote-form" style="display: none;">
-    <h3>Demander un devis</h3>
-    <!-- Formulaire qui envoie les données à send_quote.php -->
-    <form action="send_quote.php" method="POST" enctype="multipart/form-data">
-        <input type="text" name="name" id="name" placeholder="Nom" required>
-        <input type="text" name="company_name" id="company_name" placeholder="Nom de l'entreprise" required>
-        <input type="text" name="project_name" id="project_name" placeholder="Nom du projet" required>
-        <textarea name="description" id="description" placeholder="Description demandée" rows="4" required></textarea>
-        <input type="text" name="phone" id="phone" placeholder="Numéro" required>
-        <input type="file" name="file" id="file" required>
-        <button type="submit" class="submit-button">Envoyer</button>
-        <button type="button" class="close-button" onclick="closeForm()">Fermer</button>
-    </form>
-</div>
-
-<!-- JavaScript pour afficher/masquer le formulaire -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Ouvrir le formulaire au clic du bouton principal
-        document.getElementById("quoteButton").onclick = function() {
-            document.getElementById("quoteForm").style.display = "block";
-        };
-
-        // Fermer le formulaire en cliquant sur "Fermer"
-        window.closeForm = function() {
-            document.getElementById("quoteForm").style.display = "none";
-        };
-    });
-</script>
-
+    <script>
+        // Initialize GSAP
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Alpine.js Data
+        function appData() {
+            return {
+                mobileMenuOpen: false,
+                activeService: 0,
+                currentStep: 1,
+                setActiveService(index) {
+                    this.activeService = index;
+                },
+                nextStep() {
+                    if (this.currentStep < 4) {
+                        this.currentStep++;
+                    }
+                },
+                prevStep() {
+                    if (this.currentStep > 1) {
+                        this.currentStep--;
+                    }
+                }
+            }
+        }
+        
+        // Wait for page to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide loading screen
+            setTimeout(function() {
+                document.getElementById('loadingScreen').style.opacity = '0';
+                setTimeout(function() {
+                    document.getElementById('loadingScreen').style.display = 'none';
+                }, 800);
+            }, 1500);
+            
+            // Initialize animations
+            gsap.utils.toArray('.service-step').forEach((step, i) => {
+                gsap.to(step, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    scrollTrigger: {
+                        trigger: step,
+                        start: 'top 80%',
+                        toggleActions: 'play none none none'
+                    }
+                });
+            });
+            
+            // Animate portfolio items
+            gsap.utils.toArray('.portfolio-item').forEach((item, i) => {
+                gsap.to(item, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    delay: i * 0.1,
+                    scrollTrigger: {
+                        trigger: item,
+                        start: 'top 90%',
+                        toggleActions: 'play none none none'
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
