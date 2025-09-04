@@ -267,25 +267,24 @@
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
         <div class="absolute inset-0 z-0">
+            <img src="img/ariere.jpg" alt="Background" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-deep-black opacity-80"></div>
-            <!-- Video background would go here -->
-            <div class="w-full h-full bg-gradient-to-br from-deep-black to-sapphire opacity-30"></div>
         </div>
         
         <div class="container mx-auto px-4 z-10 text-center">
             <h1 class="text-5xl md:text-7xl font-cinzel font-bold mb-6 shimmer-text">
-                Crafting Timeless Architectural Models
+                Réalisation des Maquettes 3D d'Architecture
             </h1>
             <p class="text-xl md:text-2xl text-platinum mb-10 max-w-3xl mx-auto">
-                RÉALISEZ VOS PROJETS EN TOUTE CONFIANCE - Maquettes 3D d'Architecture - TRAVAUX DE QUALITÉ
+                RÉALISEZ VOS PROJETS EN TOUTE CONFIANCE - Maquettes 3D d'Architecture - TRAVAUX DE QUALITÉ - CONSEIL & DEVIS GRATUITS
             </p>
             
             <div class="flex flex-col md:flex-row justify-center gap-6">
                 <a href="#services" class="gold-gradient text-deep-black font-semibold py-3 px-8 rounded-full transform transition hover:scale-105 hover:shadow-lg">
-                    Explore Services
+                    Découvrir nos Services
                 </a>
                 <a href="#contact" class="border-2 border-royal-gold text-royal-gold font-semibold py-3 px-8 rounded-full transform transition hover:scale-105 hover:shadow-lg">
-                    Request Quote
+                    Demander un Devis
                 </a>
             </div>
         </div>
@@ -300,7 +299,7 @@
     <!-- About Section -->
     <section id="about" class="py-20 bg-deep-black">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-cinzel font-bold text-royal-gold mb-16 text-center section-title mx-auto">Our Story</h2>
+            <h2 class="text-4xl font-cinzel font-bold text-royal-gold mb-16 text-center section-title mx-auto">Notre Histoire</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div class="space-y-8">
@@ -309,8 +308,8 @@
                             <i class="fas fa-flag"></i>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-cinzel text-platinum mb-2">Founded with Vision</h3>
-                            <p class="text-platinum">Maqtop was established with a clear vision to revolutionize architectural model creation in Morocco.</p>
+                            <h3 class="text-2xl font-cinzel text-platinum mb-2">Fondée avec Vision</h3>
+                            <p class="text-platinum">Maqtop a été créée avec une vision claire de révolutionner la création de maquettes architecturales au Maroc.</p>
                         </div>
                     </div>
                     
@@ -320,7 +319,7 @@
                         </div>
                         <div>
                             <h3 class="text-2xl font-cinzel text-platinum mb-2">Innovation & Excellence</h3>
-                            <p class="text-platinum">We continuously innovate to deliver exceptional quality and precision in every project.</p>
+                            <p class="text-platinum">Nous innovons continuellement pour offrir une qualité et une précision exceptionnelles dans chaque projet.</p>
                         </div>
                     </div>
                     
@@ -329,16 +328,16 @@
                             <i class="fas fa-handshake"></i>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-cinzel text-platinum mb-2">Client Partnerships</h3>
-                            <p class="text-platinum">Building long-term relationships with architects, developers, and visionaries across Morocco.</p>
+                            <h3 class="text-2xl font-cinzel text-platinum mb-2">Partenariats Clients</h3>
+                            <p class="text-platinum">Établir des relations à long terme avec architectes, promoteurs et visionnaires à travers le Maroc.</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="relative">
                     <div class="glass-effect rounded-2xl p-6">
-                        <img src="https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                             alt="Architectural Model" class="rounded-xl w-full h-auto">
+                        <img src="img/maquette1.jpg" 
+                             alt="Maquette Architecturale" class="rounded-xl w-full h-auto">
                     </div>
                 </div>
             </div>
@@ -350,19 +349,19 @@
         <div class="absolute inset-0 bg-deep-black opacity-95"></div>
         
         <div class="container mx-auto px-4 relative z-10">
-            <h2 class="text-4xl font-cinzel font-bold text-royal-gold mb-4 text-center">Our Services</h2>
-            <p class="text-xl text-platinum mb-16 text-center max-w-3xl mx-auto">Discover our comprehensive range of architectural model services</p>
+            <h2 class="text-4xl font-cinzel font-bold text-royal-gold mb-4 text-center">Nos Services</h2>
+            <p class="text-xl text-platinum mb-16 text-center max-w-3xl mx-auto">Découvrez notre gamme complète de services de maquettes architecturales</p>
             
             <div class="max-w-5xl mx-auto">
                 <!-- Service Steps Navigation -->
                 <div class="flex justify-center mb-12">
                     <div class="glass-effect rounded-full p-2 flex">
                         <button @click="setActiveService(0)" :class="{'gold-gradient text-deep-black': activeService === 0, 'text-platinum': activeService !== 0}" 
-                                class="px-6 py-3 rounded-full transition">Architectural</button>
+                                class="px-6 py-3 rounded-full transition">Architecturales</button>
                         <button @click="setActiveService(1)" :class="{'gold-gradient text-deep-black': activeService === 1, 'text-platinum': activeService !== 1}" 
-                                class="px-6 py-3 rounded-full transition">Industrial</button>
+                                class="px-6 py-3 rounded-full transition">Industrielles</button>
                         <button @click="setActiveService(2)" :class="{'gold-gradient text-deep-black': activeService === 2, 'text-platinum': activeService !== 2}" 
-                                class="px-6 py-3 rounded-full transition">Interior</button>
+                                class="px-6 py-3 rounded-full transition">Intérieures</button>
                     </div>
                 </div>
                 
@@ -377,8 +376,8 @@
                         </div>
                         <div class="flex justify-center md:justify-start">
                             <div class="glass-effect rounded-2xl p-2">
-                                <img src="https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                                     alt="Architectural Model" class="rounded-xl w-full h-64 object-cover">
+                                <img src="img/maquette1.jpg" 
+                                     alt="Maquette Architecturale" class="rounded-xl w-full h-64 object-cover">
                             </div>
                         </div>
                     </div>
@@ -392,8 +391,8 @@
                         </div>
                         <div class="flex justify-center md:justify-start">
                             <div class="glass-effect rounded-2xl p-2">
-                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                                     alt="Industrial Model" class="rounded-xl w-full h-64 object-cover">
+                                <img src="img/industrielle1.jpg" 
+                                     alt="Maquette Industrielle" class="rounded-xl w-full h-64 object-cover">
                             </div>
                         </div>
                     </div>
@@ -407,8 +406,8 @@
                         </div>
                         <div class="flex justify-center md:justify-start">
                             <div class="glass-effect rounded-2xl p-2">
-                                <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                                     alt="Interior Model" class="rounded-xl w-full h-64 object-cover">
+                                <img src="img/3d1.jpg" 
+                                     alt="Maquette Intérieure" class="rounded-xl w-full h-64 object-cover">
                             </div>
                         </div>
                     </div>
@@ -420,16 +419,16 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="py-20 bg-deep-black">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-cinzel font-bold text-royal-gold mb-4 text-center">Our Portfolio</h2>
-            <p class="text-xl text-platinum mb-12 text-center max-w-3xl mx-auto">Explore our exceptional collection of architectural models</p>
+            <h2 class="text-4xl font-cinzel font-bold text-royal-gold mb-4 text-center">Notre Portfolio</h2>
+            <p class="text-xl text-platinum mb-12 text-center max-w-3xl mx-auto">Découvrez notre collection exceptionnelle de maquettes architecturales</p>
             
             <!-- Portfolio Filter -->
             <div class="flex justify-center mb-12">
                 <div class="glass-effect rounded-full p-2 flex">
-                    <button class="px-6 py-3 rounded-full text-platinum hover:bg-royal-gold hover:text-deep-black transition">All</button>
-                    <button class="px-6 py-3 rounded-full text-platinum hover:bg-royal-gold hover:text-deep-black transition">Residential</button>
+                    <button class="px-6 py-3 rounded-full text-platinum hover:bg-royal-gold hover:text-deep-black transition">Tous</button>
+                    <button class="px-6 py-3 rounded-full text-platinum hover:bg-royal-gold hover:text-deep-black transition">Résidentiel</button>
                     <button class="px-6 py-3 rounded-full text-platinum hover:bg-royal-gold hover:text-deep-black transition">Commercial</button>
-                    <button class="px-6 py-3 rounded-full text-platinum hover:bg-royal-gold hover:text-deep-black transition">3D Printing</button>
+                    <button class="px-6 py-3 rounded-full text-platinum hover:bg-royal-gold hover:text-deep-black transition">Impression 3D</button>
                 </div>
             </div>
             
@@ -438,43 +437,103 @@
                 <!-- Portfolio Item 1 -->
                 <div class="portfolio-item glass-effect rounded-2xl overflow-hidden">
                     <div class="h-64 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                             alt="Project" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <img src="img/maquette1.jpg" 
+                             alt="Maquette Architecturale" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-cinzel text-royal-gold mb-2">Residential Complex</h3>
-                        <p class="text-platinum">Modern residential complex model with detailed surroundings.</p>
+                        <h3 class="text-xl font-cinzel text-royal-gold mb-2">Complexe Résidentiel</h3>
+                        <p class="text-platinum">Maquette de complexe résidentiel moderne avec environnement détaillé.</p>
                     </div>
                 </div>
                 
                 <!-- Portfolio Item 2 -->
                 <div class="portfolio-item glass-effect rounded-2xl overflow-hidden">
                     <div class="h-64 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                             alt="Project" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <img src="img/maquette2.jpg" 
+                             alt="Maquette Architecturale" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-cinzel text-royal-gold mb-2">Commercial Building</h3>
-                        <p class="text-platinum">Innovative commercial space design for urban development.</p>
+                        <h3 class="text-xl font-cinzel text-royal-gold mb-2">Bâtiment Commercial</h3>
+                        <p class="text-platinum">Conception innovante d'espace commercial pour le développement urbain.</p>
                     </div>
                 </div>
                 
                 <!-- Portfolio Item 3 -->
                 <div class="portfolio-item glass-effect rounded-2xl overflow-hidden">
                     <div class="h-64 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                             alt="Project" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <img src="img/maquette3.jpg" 
+                             alt="Maquette Architecturale" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-cinzel text-royal-gold mb-2">Industrial Facility</h3>
-                        <p class="text-platinum">Detailed industrial facility model with functional elements.</p>
+                        <h3 class="text-xl font-cinzel text-royal-gold mb-2">Projet Urbain</h3>
+                        <p class="text-platinum">Maquette détaillée d'un projet de développement urbain complet.</p>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item glass-effect rounded-2xl overflow-hidden">
+                    <div class="h-64 overflow-hidden">
+                        <img src="img/industrielle1.jpg" 
+                             alt="Maquette Industrielle" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-cinzel text-royal-gold mb-2">Usine de Production</h3>
+                        <p class="text-platinum">Maquette industrielle détaillée d'une usine de production moderne.</p>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-item glass-effect rounded-2xl overflow-hidden">
+                    <div class="h-64 overflow-hidden">
+                        <img src="img/industrielle2.jpg" 
+                             alt="Maquette Industrielle" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-cinzel text-royal-gold mb-2">Installation Technologique</h3>
+                        <p class="text-platinum">Maquette d'installation technologique avec éléments fonctionnels.</p>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 6 -->
+                <div class="portfolio-item glass-effect rounded-2xl overflow-hidden">
+                    <div class="h-64 overflow-hidden">
+                        <img src="img/3d1.jpg" 
+                             alt="Maquette Intérieure" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-cinzel text-royal-gold mb-2">Design Intérieur Moderne</h3>
+                        <p class="text-platinum">Maquette d'intérieur contemporain avec aménagement spatial précis.</p>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 7 -->
+                <div class="portfolio-item glass-effect rounded-2xl overflow-hidden">
+                    <div class="h-64 overflow-hidden">
+                        <img src="img/3d2.jpg" 
+                             alt="Maquette Intérieure" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-cinzel text-royal-gold mb-2">Espace Commercial</h3>
+                        <p class="text-platinum">Maquette d'intérieur commercial avec design innovant.</p>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 8 -->
+                <div class="portfolio-item glass-effect rounded-2xl overflow-hidden">
+                    <div class="h-64 overflow-hidden">
+                        <img src="img/3d3.jpg" 
+                             alt="Maquette Intérieure" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-cinzel text-royal-gold mb-2">Résidence Premium</h3>
+                        <p class="text-platinum">Maquette d'intérieur de résidence haut de gamme.</p>
                     </div>
                 </div>
             </div>
             
             <div class="text-center mt-12">
                 <a href="#" class="gold-gradient text-deep-black font-semibold py-3 px-8 rounded-full transform transition hover:scale-105 hover:shadow-lg">
-                    View All Projects
+                    Voir Tous les Projets
                 </a>
             </div>
         </div>
@@ -485,7 +544,7 @@
         <div class="absolute inset-0 bg-deep-black opacity-95"></div>
         
         <div class="container mx-auto px-4 relative z-10">
-            <h2 class="text-4xl font-cinzel font-bold text-royal-gold mb-16 text-center">Client Testimonials</h2>
+            <h2 class="text-4xl font-cinzel font-bold text-royal-gold mb-16 text-center">Témoignages Clients</h2>
             
             <div class="max-w-4xl mx-auto">
                 <div class="testimonial-card glass-effect rounded-2xl p-8">
@@ -495,7 +554,7 @@
                         </div>
                         <div class="ml-4">
                             <h3 class="text-xl font-cinzel text-royal-gold">Jean Dupont</h3>
-                            <p class="text-platinum">Architect at DesignPlus</p>
+                            <p class="text-platinum">Architecte chez DesignPlus</p>
                         </div>
                     </div>
                     
@@ -524,14 +583,14 @@
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-deep-black">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-cinzel font-bold text-royal-gold mb-4 text-center">Request a Quote</h2>
-            <p class="text-xl text-platinum mb-12 text-center max-w-3xl mx-auto">Get in touch with us for a personalized quote</p>
+            <h2 class="text-4xl font-cinzel font-bold text-royal-gold mb-4 text-center">Demander un Devis</h2>
+            <p class="text-xl text-platinum mb-12 text-center max-w-3xl mx-auto">Contactez-nous pour un devis personnalisé</p>
             
             <div class="max-w-3xl mx-auto glass-effect rounded-2xl p-8">
                 <!-- Progress Bar -->
                 <div class="mb-8">
                     <div class="flex justify-between mb-2">
-                        <span class="text-platinum">Step <span x-text="currentStep"></span> of 4</span>
+                        <span class="text-platinum">Étape <span x-text="currentStep"></span> sur 4</span>
                         <span class="text-royal-gold" x-text="Math.round((currentStep/4)*100) + '%'"></span>
                     </div>
                     <div class="w-full bg-gray-700 rounded-full h-2">
@@ -543,26 +602,26 @@
                 <form>
                     <!-- Step 1 -->
                     <div x-show="currentStep === 1" class="step-form active">
-                        <h3 class="text-2xl font-cinzel text-royal-gold mb-6">Personal Information</h3>
+                        <h3 class="text-2xl font-cinzel text-royal-gold mb-6">Informations Personnelles</h3>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label class="block text-platinum mb-2">Full Name *</label>
+                                <label class="block text-platinum mb-2">Nom Complet *</label>
                                 <input type="text" class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required>
                             </div>
                             
                             <div>
-                                <label class="block text-platinum mb-2">Email Address *</label>
+                                <label class="block text-platinum mb-2">Adresse Email *</label>
                                 <input type="email" class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required>
                             </div>
                             
                             <div>
-                                <label class="block text-platinum mb-2">Phone Number *</label>
+                                <label class="block text-platinum mb-2">Numéro de Téléphone *</label>
                                 <input type="tel" class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required>
                             </div>
                             
                             <div>
-                                <label class="block text-platinum mb-2">Company Name</label>
+                                <label class="block text-platinum mb-2">Nom de l'Entreprise</label>
                                 <input type="text" class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold">
                             </div>
                         </div>
@@ -570,53 +629,53 @@
                         <div class="flex justify-between mt-8">
                             <div></div> <!-- Empty div for spacing -->
                             <button type="button" @click="nextStep()" class="gold-gradient text-deep-black font-semibold py-3 px-8 rounded-full transform transition hover:scale-105">
-                                Next <i class="fas fa-arrow-right ml-2"></i>
+                                Suivant <i class="fas fa-arrow-right ml-2"></i>
                             </button>
                         </div>
                     </div>
                     
                     <!-- Step 2 -->
                     <div x-show="currentStep === 2" class="step-form">
-                        <h3 class="text-2xl font-cinzel text-royal-gold mb-6">Project Details</h3>
+                        <h3 class="text-2xl font-cinzel text-royal-gold mb-6">Détails du Projet</h3>
                         
                         <div class="grid grid-cols-1 gap-6">
                             <div>
-                                <label class="block text-platinum mb-2">Project Type *</label>
+                                <label class="block text-platinum mb-2">Type de Projet *</label>
                                 <select class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required>
-                                    <option value="">Select Project Type</option>
-                                    <option value="architectural">Architectural Model</option>
-                                    <option value="industrial">Industrial Model</option>
-                                    <option value="interior">Interior Model</option>
-                                    <option value="urban">Urban Planning Model</option>
-                                    <option value="other">Other</option>
+                                    <option value="">Sélectionnez le Type de Projet</option>
+                                    <option value="architectural">Maquette Architecturale</option>
+                                    <option value="industrial">Maquette Industrielle</option>
+                                    <option value="interior">Maquette Intérieure</option>
+                                    <option value="urban">Maquette d'Urbanisme</option>
+                                    <option value="other">Autre</option>
                                 </select>
                             </div>
                             
                             <div>
-                                <label class="block text-platinum mb-2">Project Description *</label>
+                                <label class="block text-platinum mb-2">Description du Projet *</label>
                                 <textarea rows="4" class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required></textarea>
                             </div>
                         </div>
                         
                         <div class="flex justify-between mt-8">
                             <button type="button" @click="prevStep()" class="border border-royal-gold text-royal-gold font-semibold py-3 px-8 rounded-full transform transition hover:scale-105">
-                                <i class="fas fa-arrow-left mr-2"></i> Back
+                                <i class="fas fa-arrow-left mr-2"></i> Retour
                             </button>
                             <button type="button" @click="nextStep()" class="gold-gradient text-deep-black font-semibold py-3 px-8 rounded-full transform transition hover:scale-105">
-                                Next <i class="fas fa-arrow-right ml-2"></i>
+                                Suivant <i class="fas fa-arrow-right ml-2"></i>
                             </button>
                         </div>
                     </div>
                     
                     <!-- Step 3 -->
                     <div x-show="currentStep === 3" class="step-form">
-                        <h3 class="text-2xl font-cinzel text-royal-gold mb-6">Budget & Timeline</h3>
+                        <h3 class="text-2xl font-cinzel text-royal-gold mb-6">Budget & Délais</h3>
                         
                         <div class="grid grid-cols-1 gap-6">
                             <div>
-                                <label class="block text-platinum mb-2">Estimated Budget *</label>
+                                <label class="block text-platinum mb-2">Budget Estimé *</label>
                                 <select class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required>
-                                    <option value="">Select Budget Range</option>
+                                    <option value="">Sélectionnez une Fourchette de Budget</option>
                                     <option value="5000">5,000 - 10,000 MAD</option>
                                     <option value="10000">10,000 - 20,000 MAD</option>
                                     <option value="20000">20,000 - 50,000 MAD</option>
@@ -625,38 +684,38 @@
                             </div>
                             
                             <div>
-                                <label class="block text-platinum mb-2">Desired Timeline *</label>
+                                <label class="block text-platinum mb-2">Délais Souhaités *</label>
                                 <select class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required>
-                                    <option value="">Select Timeline</option>
-                                    <option value="urgent">Urgent (1-2 weeks)</option>
-                                    <option value="normal">Normal (3-4 weeks)</option>
-                                    <option value="flexible">Flexible (1-2 months)</option>
+                                    <option value="">Sélectionnez un Délai</option>
+                                    <option value="urgent">Urgent (1-2 semaines)</option>
+                                    <option value="normal">Normal (3-4 semaines)</option>
+                                    <option value="flexible">Flexible (1-2 mois)</option>
                                 </select>
                             </div>
                         </div>
                         
                         <div class="flex justify-between mt-8">
                             <button type="button" @click="prevStep()" class="border border-royal-gold text-royal-gold font-semibold py-3 px-8 rounded-full transform transition hover:scale-105">
-                                <i class="fas fa-arrow-left mr-2"></i> Back
+                                <i class="fas fa-arrow-left mr-2"></i> Retour
                             </button>
                             <button type="button" @click="nextStep()" class="gold-gradient text-deep-black font-semibold py-3 px-8 rounded-full transform transition hover:scale-105">
-                                Next <i class="fas fa-arrow-right ml-2"></i>
+                                Suivant <i class="fas fa-arrow-right ml-2"></i>
                             </button>
                         </div>
                     </div>
                     
                     <!-- Step 4 -->
                     <div x-show="currentStep === 4" class="step-form">
-                        <h3 class="text-2xl font-cinzel text-royal-gold mb-6">Final Details</h3>
+                        <h3 class="text-2xl font-cinzel text-royal-gold mb-6">Détails Finaux</h3>
                         
                         <div class="grid grid-cols-1 gap-6">
                             <div>
-                                <label class="block text-platinum mb-2">Additional Files</label>
+                                <label class="block text-platinum mb-2">Fichiers Additionnels</label>
                                 <div class="flex items-center justify-center w-full">
                                     <label class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-600 rounded-lg cursor-pointer glass-effect hover:border-royal-gold">
                                         <div class="flex flex-col items-center justify-center pt-5 pb-6">
                                             <i class="fas fa-cloud-upload-alt text-royal-gold text-3xl mb-2"></i>
-                                            <p class="text-sm text-platinum">Drag & drop or click to upload files</p>
+                                            <p class="text-sm text-platinum">Glissez-déposez ou cliquez pour télécharger des fichiers</p>
                                         </div>
                                         <input type="file" class="hidden" multiple>
                                     </label>
@@ -666,17 +725,17 @@
                             <div>
                                 <label class="flex items-center">
                                     <input type="checkbox" class="rounded glass-effect border-gray-600 text-royal-gold focus:ring-royal-gold">
-                                    <span class="ml-2 text-platinum">I agree to the terms and conditions</span>
+                                    <span class="ml-2 text-platinum">J'accepte les termes et conditions</span>
                                 </label>
                             </div>
                         </div>
                         
                         <div class="flex justify-between mt-8">
                             <button type="button" @click="prevStep()" class="border border-royal-gold text-royal-gold font-semibold py-3 px-8 rounded-full transform transition hover:scale-105">
-                                <i class="fas fa-arrow-left mr-2"></i> Back
+                                <i class="fas fa-arrow-left mr-2"></i> Retour
                             </button>
                             <button type="submit" class="gold-gradient text-deep-black font-semibold py-3 px-8 rounded-full transform transition hover:scale-105">
-                                Submit Request
+                                Soumettre la Demande
                             </button>
                         </div>
                     </div>
@@ -701,10 +760,10 @@
                 </div>
                 
                 <div>
-                    <h4 class="text-xl font-cinzel text-royal-gold mb-4">Quick Links</h4>
+                    <h4 class="text-xl font-cinzel text-royal-gold mb-4">Liens Rapides</h4>
                     <ul class="space-y-2">
-                        <li><a href="#home" class="text-platinum hover:text-royal-gold transition">Home</a></li>
-                        <li><a href="#about" class="text-platinum hover:text-royal-gold transition">About</a></li>
+                        <li><a href="#home" class="text-platinum hover:text-royal-gold transition">Accueil</a></li>
+                        <li><a href="#about" class="text-platinum hover:text-royal-gold transition">À Propos</a></li>
                         <li><a href="#services" class="text-platinum hover:text-royal-gold transition">Services</a></li>
                         <li><a href="#portfolio" class="text-platinum hover:text-royal-gold transition">Portfolio</a></li>
                         <li><a href="#contact" class="text-platinum hover:text-royal-gold transition">Contact</a></li>
@@ -712,18 +771,18 @@
                 </div>
                 
                 <div>
-                    <h4 class="text-xl font-cinzel text-royal-gold mb-4">Our Services</h4>
+                    <h4 class="text-xl font-cinzel text-royal-gold mb-4">Nos Services</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-platinum hover:text-royal-gold transition">Architectural Models</a></li>
-                        <li><a href="#" class="text-platinum hover:text-royal-gold transition">Industrial Models</a></li>
-                        <li><a href="#" class="text-platinum hover:text-royal-gold transition">Interior Models</a></li>
-                        <li><a href="#" class="text-platinum hover:text-royal-gold transition">Urban Planning</a></li>
-                        <li><a href="#" class="text-platinum hover:text-royal-gold transition">3D Printing</a></li>
+                        <li><a href="#" class="text-platinum hover:text-royal-gold transition">Maquettes Architecturales</a></li>
+                        <li><a href="#" class="text-platinum hover:text-royal-gold transition">Maquettes Industrielles</a></li>
+                        <li><a href="#" class="text-platinum hover:text-royal-gold transition">Maquettes Intérieures</a></li>
+                        <li><a href="#" class="text-platinum hover:text-royal-gold transition">Urbanisme</a></li>
+                        <li><a href="#" class="text-platinum hover:text-royal-gold transition">Impression 3D</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="text-xl font-cinzel text-royal-gold mb-4">Contact Info</h4>
+                    <h4 class="text-xl font-cinzel text-royal-gold mb-4">Coordonnées</h4>
                     <ul class="space-y-2">
                         <li class="flex items-start">
                             <i class="fas fa-map-marker-alt text-royal-gold mt-1 mr-3"></i>
