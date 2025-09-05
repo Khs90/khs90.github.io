@@ -5,6 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAQTOP - Société de Réalisation des Maquettes 3D Architecturales au Maroc</title>
     <meta name="description" content="Maqtop, spécialiste de la fabrication et réalisation des Maquettes 3D architecturales et industrielles au Maroc.">
+    <meta name="keywords" content="maquettes 3D, Maroc, architecture, maquettes architecturales, modèles 3D, conception 3D">
+    <meta name="author" content="MAQTOP">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="7 days">
+    <link rel="canonical" href="https://www.maqtop.ma/">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="MAQTOP - Société de Réalisation des Maquettes 3D Architecturales au Maroc">
+    <meta property="og:description" content="Maqtop, spécialiste de la fabrication et réalisation des Maquettes 3D architecturales et industrielles au Maroc.">
+    <meta property="og:image" content="https://www.maqtop.ma/img/maquette1.jpg">
+    <meta property="og:url" content="https://www.maqtop.ma/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MAQTOP - Maquettes 3D Architecturales au Maroc">
+    <meta name="twitter:description" content="Spécialiste des maquettes 3D architecturales et industrielles au Maroc.">
+    <meta name="twitter:image" content="https://www.maqtop.ma/img/maquette1.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -218,6 +242,9 @@
             -webkit-text-fill-color: transparent;
             animation: shimmer 3s infinite linear;
         }
+
+        /* x-cloak for Alpine.js */
+        [x-cloak] { display: none !important; }
     </style>
 </head>
 <body class="antialiased" x-data="appData()">
@@ -240,6 +267,7 @@
                 <a href="#about" class="nav-link text-platinum hover:text-royal-gold transition">À Propos</a>
                 <a href="#services" class="nav-link text-platinum hover:text-royal-gold transition">Services</a>
                 <a href="#portfolio" class="nav-link text-platinum hover:text-royal-gold transition">Portfolio</a>
+                <a href="#blog" class="nav-link text-platinum hover:text-royal-gold transition">Blog</a>
                 <a href="#testimonials" class="nav-link text-platinum hover:text-royal-gold transition">Témoignages</a>
                 <a href="#contact" class="nav-link text-platinum hover:text-royal-gold transition">Contact</a>
             </div>
@@ -252,12 +280,13 @@
         </div>
         
         <!-- Mobile Menu -->
-        <div x-show="mobileMenuOpen" class="md:hidden glass-effect mt-4 p-4 rounded-lg" style="display: none;">
+        <div x-show="mobileMenuOpen" x-cloak class="md:hidden glass-effect mt-4 p-4 rounded-lg">
             <div class="flex flex-col space-y-4">
                 <a href="#home" class="nav-link text-platinum hover:text-royal-gold transition">Accueil</a>
                 <a href="#about" class="nav-link text-platinum hover:text-royal-gold transition">À Propos</a>
                 <a href="#services" class="nav-link text-platinum hover:text-royal-gold transition">Services</a>
                 <a href="#portfolio" class="nav-link text-platinum hover:text-royal-gold transition">Portfolio</a>
+                <a href="#blog" class="nav-link text-platinum hover:text-royal-gold transition">Blog</a>
                 <a href="#testimonials" class="nav-link text-platinum hover:text-royal-gold transition">Témoignages</a>
                 <a href="#contact" class="nav-link text-platinum hover:text-royal-gold transition">Contact</a>
             </div>
@@ -267,7 +296,7 @@
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="img/ariere.jpg" alt="Background" class="w-full h-full object-cover">
+            <img src="img/ariere.jpg" alt="Background" class="w-full h-full object-cover" loading="lazy">
             <div class="absolute inset-0 bg-deep-black opacity-80"></div>
         </div>
         
@@ -337,7 +366,7 @@
                 <div class="relative">
                     <div class="glass-effect rounded-2xl p-6">
                         <img src="img/maquette1.jpg" 
-                             alt="Maquette Architecturale" class="rounded-xl w-full h-auto">
+                             alt="Maquette Architecturale" class="rounded-xl w-full h-auto" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -377,7 +406,7 @@
                         <div class="flex justify-center md:justify-start">
                             <div class="glass-effect rounded-2xl p-2">
                                 <img src="img/maquette1.jpg" 
-                                     alt="Maquette Architecturale" class="rounded-xl w-full h-64 object-cover">
+                                     alt="Maquette Architecturale" class="rounded-xl w-full h-64 object-cover" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -392,7 +421,7 @@
                         <div class="flex justify-center md:justify-start">
                             <div class="glass-effect rounded-2xl p-2">
                                 <img src="img/industrielle1.jpg" 
-                                     alt="Maquette Industrielle" class="rounded-xl w-full h-64 object-cover">
+                                     alt="Maquette Industrielle" class="rounded-xl w-full h-64 object-cover" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -407,7 +436,7 @@
                         <div class="flex justify-center md:justify-start">
                             <div class="glass-effect rounded-2xl p-2">
                                 <img src="img/3d1.jpg" 
-                                     alt="Maquette Intérieure" class="rounded-xl w-full h-64 object-cover">
+                                     alt="Maquette Intérieure" class="rounded-xl w-full h-64 object-cover" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -438,7 +467,7 @@
                 <div class="portfolio-item glass-effect rounded-2xl overflow-hidden">
                     <div class="h-64 overflow-hidden">
                         <img src="img/maquette1.jpg" 
-                             alt="Maquette Architecturale" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                             alt="Maquette Architecturale" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-cinzel text-royal-gold mb-2">Complexe Résidentiel</h3>
@@ -450,7 +479,7 @@
                 <div class="portfolio-item glass-effect rounded-2xl overflow-hidden">
                     <div class="h-64 overflow-hidden">
                         <img src="img/maquette2.jpg" 
-                             alt="Maquette Architecturale" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                             alt="Maquette Architecturale" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-cinzel text-royal-gold mb-2">Bâtiment Commercial</h3>
@@ -462,7 +491,7 @@
                 <div class="portfolio-item glass-effect rounded-2xl overflow-hidden">
                     <div class="h-64 overflow-hidden">
                         <img src="img/maquette3.jpg" 
-                             alt="Maquette Architecturale" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                             alt="Maquette Architecturale" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-cinzel text-royal-gold mb-2">Projet Urbain</h3>
@@ -474,7 +503,7 @@
                 <div class="portfolio-item glass-effect rounded-2xl overflow-hidden">
                     <div class="h-64 overflow-hidden">
                         <img src="img/industrielle1.jpg" 
-                             alt="Maquette Industrielle" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                             alt="Maquette Industrielle" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-cinzel text-royal-gold mb-2">Usine de Production</h3>
@@ -486,7 +515,7 @@
                 <div class="portfolio-item glass-effect rounded-2xl overflow-hidden">
                     <div class="h-64 overflow-hidden">
                         <img src="img/industrielle2.jpg" 
-                             alt="Maquette Industrielle" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                             alt="Maquette Industrielle" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-cinzel text-royal-gold mb-2">Installation Technologique</h3>
@@ -498,35 +527,11 @@
                 <div class="portfolio-item glass-effect rounded-2xl overflow-hidden">
                     <div class="h-64 overflow-hidden">
                         <img src="img/3d1.jpg" 
-                             alt="Maquette Intérieure" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                             alt="Maquette Intérieure" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-cinzel text-royal-gold mb-2">Design Intérieur Moderne</h3>
                         <p class="text-platinum">Maquette d'intérieur contemporain avec aménagement spatial précis.</p>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 7 -->
-                <div class="portfolio-item glass-effect rounded-2xl overflow-hidden">
-                    <div class="h-64 overflow-hidden">
-                        <img src="img/3d2.jpg" 
-                             alt="Maquette Intérieure" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-cinzel text-royal-gold mb-2">Espace Commercial</h3>
-                        <p class="text-platinum">Maquette d'intérieur commercial avec design innovant.</p>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 8 -->
-                <div class="portfolio-item glass-effect rounded-2xl overflow-hidden">
-                    <div class="h-64 overflow-hidden">
-                        <img src="img/3d3.jpg" 
-                             alt="Maquette Intérieure" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-cinzel text-royal-gold mb-2">Résidence Premium</h3>
-                        <p class="text-platinum">Maquette d'intérieur de résidence haut de gamme.</p>
                     </div>
                 </div>
             </div>
@@ -534,6 +539,57 @@
             <div class="text-center mt-12">
                 <a href="#" class="gold-gradient text-deep-black font-semibold py-3 px-8 rounded-full transform transition hover:scale-105 hover:shadow-lg">
                     Voir Tous les Projets
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-deep-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-cinzel font-bold text-royal-gold mb-16 text-center section-title mx-auto">Notre Blog</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="glass-effect rounded-2xl overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="img/maquette1.jpg" alt="Types de maquettes architecturales" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-cinzel text-royal-gold mb-2">Types de maquettes architecturales</h3>
+                        <p class="text-platinum mb-4">Guide complet des différents types de maquettes architecturales et leurs utilisations.</p>
+                        <a href="#" class="text-royal-gold hover:underline">Lire la suite</a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="glass-effect rounded-2xl overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="img/industrielle1.jpg" alt="Prix des maquettes au Maroc" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-cinzel text-royal-gold mb-2">Prix des maquettes au Maroc</h3>
+                        <p class="text-platinum mb-4">Tout ce que vous devez savoir sur le coût de réalisation des maquettes selon leurs types.</p>
+                        <a href="#" class="text-royal-gold hover:underline">Lire la suite</a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="glass-effect rounded-2xl overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="img/3d1.jpg" alt="Conseils pour choisir une maquette réussie" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-cinzel text-royal-gold mb-2">Conseils pour choisir une maquette réussie</h3>
+                        <p class="text-platinum mb-4">Comment choisir le modèle adapté à votre projet architectural.</p>
+                        <a href="#" class="text-royal-gold hover:underline">Lire la suite</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="gold-gradient text-deep-black font-semibold py-3 px-8 rounded-full transform transition hover:scale-105 hover:shadow-lg">
+                    Voir tous les articles
                 </a>
             </div>
         </div>
@@ -599,7 +655,7 @@
                 </div>
                 
                 <!-- Multi-step Form -->
-                <form>
+                <form id="devisForm" action="https://formspree.io/f/{your-form-id}" method="POST">
                     <!-- Step 1 -->
                     <div x-show="currentStep === 1" class="step-form active">
                         <h3 class="text-2xl font-cinzel text-royal-gold mb-6">Informations Personnelles</h3>
@@ -607,22 +663,22 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-platinum mb-2">Nom Complet *</label>
-                                <input type="text" class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required>
+                                <input type="text" name="fullname" class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required>
                             </div>
                             
                             <div>
                                 <label class="block text-platinum mb-2">Adresse Email *</label>
-                                <input type="email" class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required>
+                                <input type="email" name="email" class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required>
                             </div>
                             
                             <div>
                                 <label class="block text-platinum mb-2">Numéro de Téléphone *</label>
-                                <input type="tel" class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required>
+                                <input type="tel" name="phone" class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required>
                             </div>
                             
                             <div>
                                 <label class="block text-platinum mb-2">Nom de l'Entreprise</label>
-                                <input type="text" class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold">
+                                <input type="text" name="company" class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold">
                             </div>
                         </div>
                         
@@ -641,7 +697,7 @@
                         <div class="grid grid-cols-1 gap-6">
                             <div>
                                 <label class="block text-platinum mb-2">Type de Projet *</label>
-                                <select class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required>
+                                <select name="project_type" class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required>
                                     <option value="">Sélectionnez le Type de Projet</option>
                                     <option value="architectural">Maquette Architecturale</option>
                                     <option value="industrial">Maquette Industrielle</option>
@@ -653,7 +709,7 @@
                             
                             <div>
                                 <label class="block text-platinum mb-2">Description du Projet *</label>
-                                <textarea rows="4" class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required></textarea>
+                                <textarea name="project_description" rows="4" class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required></textarea>
                             </div>
                         </div>
                         
@@ -674,7 +730,7 @@
                         <div class="grid grid-cols-1 gap-6">
                             <div>
                                 <label class="block text-platinum mb-2">Budget Estimé *</label>
-                                <select class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required>
+                                <select name="budget" class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required>
                                     <option value="">Sélectionnez une Fourchette de Budget</option>
                                     <option value="5000">5,000 - 10,000 MAD</option>
                                     <option value="10000">10,000 - 20,000 MAD</option>
@@ -685,7 +741,7 @@
                             
                             <div>
                                 <label class="block text-platinum mb-2">Délais Souhaités *</label>
-                                <select class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required>
+                                <select name="timeline" class="w-full glass-effect border border-gray-600 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:ring-2 focus:ring-royal-gold" required>
                                     <option value="">Sélectionnez un Délai</option>
                                     <option value="urgent">Urgent (1-2 semaines)</option>
                                     <option value="normal">Normal (3-4 semaines)</option>
@@ -717,14 +773,14 @@
                                             <i class="fas fa-cloud-upload-alt text-royal-gold text-3xl mb-2"></i>
                                             <p class="text-sm text-platinum">Glissez-déposez ou cliquez pour télécharger des fichiers</p>
                                         </div>
-                                        <input type="file" class="hidden" multiple>
+                                        <input type="file" name="files" class="hidden" multiple>
                                     </label>
                                 </div>
                             </div>
                             
                             <div>
                                 <label class="flex items-center">
-                                    <input type="checkbox" class="rounded glass-effect border-gray-600 text-royal-gold focus:ring-royal-gold">
+                                    <input type="checkbox" name="terms" class="rounded glass-effect border-gray-600 text-royal-gold focus:ring-royal-gold" required>
                                     <span class="ml-2 text-platinum">J'accepte les termes et conditions</span>
                                 </label>
                             </div>
@@ -766,6 +822,7 @@
                         <li><a href="#about" class="text-platinum hover:text-royal-gold transition">À Propos</a></li>
                         <li><a href="#services" class="text-platinum hover:text-royal-gold transition">Services</a></li>
                         <li><a href="#portfolio" class="text-platinum hover:text-royal-gold transition">Portfolio</a></li>
+                        <li><a href="#blog" class="text-platinum hover:text-royal-gold transition">Blog</a></li>
                         <li><a href="#contact" class="text-platinum hover:text-royal-gold transition">Contact</a></li>
                     </ul>
                 </div>
@@ -872,6 +929,57 @@
                         toggleActions: 'play none none none'
                     }
                 });
+            });
+
+            // Form submission handling
+            document.getElementById('devisForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Form validation
+                let isValid = true;
+                const currentStep = document.querySelector('.step-form.active');
+                const inputs = currentStep.querySelectorAll('input[required], select[required], textarea[required]');
+                
+                inputs.forEach(input => {
+                    if (!input.value) {
+                        isValid = false;
+                        input.classList.add('border-red-500');
+                    } else {
+                        input.classList.remove('border-red-500');
+                    }
+                });
+                
+                if (!isValid) {
+                    alert('Veuillez remplir tous les champs obligatoires.');
+                    return;
+                }
+                
+                // If it's the last step, submit the form
+                if (this.currentStep === 4) {
+                    // You can use Formspree, AJAX, or any other method to submit the form
+                    // For Formspree, replace {your-form-id} with your actual Formspree form ID
+                    const formData = new FormData(this);
+                    
+                    fetch(this.action, {
+                        method: this.method,
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            alert('Votre demande a été envoyée avec succès ! Nous vous contacterons bientôt.');
+                            this.reset();
+                            this.currentStep = 1;
+                        } else {
+                            throw new Error('Une erreur est survenue lors de l\'envoi du formulaire.');
+                        }
+                    })
+                    .catch(error => {
+                        alert('Erreur: ' + error.message);
+                    });
+                }
             });
         });
     </script>
